@@ -1,0 +1,32 @@
+@keyframes oscillate {
+  from {
+    transform: translateY(var(--billow));
+  }
+
+  to {
+    transform: translateY(calc(var(--billow) * -1));
+  }
+}
+
+.flag {
+  aspect-ratio: 3 / 2;
+  display: flex;
+  min-width: 120px;
+}
+
+.column {
+  animation: oscillate 500ms alternate infinite ease-in-out both;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.column:first-child {
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.column:last-child {
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+}

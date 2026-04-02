@@ -1,0 +1,83 @@
+.footer {
+  background: var(--bg-primary);
+  border-top: 1px solid var(--bg-card);
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-md);
+  padding: var(--space-3xl) var(--content-padding);
+}
+
+.wordmark {
+  width: 200px;
+  height: auto;
+  opacity: 0.5;
+  margin-bottom: var(--space-xl);
+}
+
+.disclaimer {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  text-align: center;
+}
+
+.sources,
+.credit {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Acknowledgement of Country */
+.acknowledgement {
+  background: #3E2723;
+  padding: var(--space-2xl) var(--content-padding);
+}
+
+.acknowledgementInner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xl);
+}
+
+.flagLeft,
+.flagRight {
+  flex-shrink: 0;
+}
+
+.acknowledgementText {
+  font-size: var(--text-base);
+  color: #D7CCC8;
+  line-height: 1.7;
+  text-align: left;
+}
+
+@media (max-width: 640px) {
+  .acknowledgementInner {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-lg);
+  }
+
+  .acknowledgementText {
+    text-align: center;
+    order: -1;
+  }
+
+  .flagLeft,
+  .flagRight {
+    order: 1;
+  }
+}
