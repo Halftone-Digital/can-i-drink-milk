@@ -1,0 +1,89 @@
+.section {
+  background: var(--bg-secondary);
+  padding: var(--space-4xl) var(--content-padding);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  text-align: center;
+}
+
+.steps {
+  display: flex;
+  gap: var(--space-xl);
+  position: relative;
+  justify-content: center;
+}
+
+.connector {
+  position: absolute;
+  top: 24px;
+  left: 15%;
+  right: 15%;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0.3;
+}
+
+.step {
+  flex: 1;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-md);
+  position: relative;
+  z-index: 1;
+}
+
+.circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--text-lg);
+  color: var(--accent);
+  background: var(--bg-secondary);
+}
+
+.stepTitle {
+  font-weight: 700;
+  font-size: var(--text-lg);
+}
+
+.stepDesc {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+  .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .connector {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
+}

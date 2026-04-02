@@ -1,0 +1,85 @@
+.section {
+  padding: var(--space-4xl) var(--content-padding);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  text-align: center;
+}
+
+.body {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.barWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  position: relative;
+}
+
+.barLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.bar {
+  height: 12px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(to right, var(--accent), #d4956a);
+  position: relative;
+}
+
+.indicator {
+  position: absolute;
+  left: 60%;
+  top: -32px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.indicatorLabel {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.indicatorArrow {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--text-secondary);
+}
+
+.note {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}

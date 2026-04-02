@@ -1,0 +1,297 @@
+.quiz {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-xl) var(--content-padding);
+}
+
+.container {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* Progress bar */
+.progressWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.progressLabel {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.progressBar {
+  height: 6px;
+  background: var(--bg-card);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-base);
+}
+
+/* Question card */
+.questionCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.questionText {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.sectionLabel {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Options */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.option {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg-card);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: var(--text-base);
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.option:hover {
+  background: var(--bg-card-hover);
+}
+
+.optionSelected {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  padding-top: var(--space-md);
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  background: transparent;
+  border: 1px solid var(--text-muted);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.backButton:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.nextButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-md) var(--space-2xl);
+  background: var(--accent);
+  color: var(--color-near-black, #1a1a1a);
+  font-size: var(--text-base);
+  font-weight: 700;
+  font-family: inherit;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  margin-left: auto;
+}
+
+.nextButton:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(146, 197, 188, 0.3);
+}
+
+.nextButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Spacer for when back button is hidden */
+.navSpacer {
+  width: 1px;
+}
+
+/* Results screen */
+.results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-xl);
+}
+
+.resultImage {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.resultHeadline {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.resultSubtext {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  max-width: 500px;
+}
+
+.resultDetail {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 540px;
+  text-align: left;
+}
+
+.dairyContext {
+  padding: var(--space-md) var(--space-lg);
+  background: var(--accent-subtle);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+  text-align: left;
+  max-width: 540px;
+  width: 100%;
+}
+
+.tipsSection {
+  width: 100%;
+  max-width: 540px;
+  text-align: left;
+}
+
+.tipsHeading {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+}
+
+.tipsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.tipsList li {
+  padding-left: var(--space-lg);
+  position: relative;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.tipsList li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.disclaimer {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  max-width: 540px;
+  line-height: 1.6;
+  border-top: 1px solid var(--bg-card);
+  padding-top: var(--space-lg);
+}
+
+.resultActions {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.retakeButton {
+  display: inline-block;
+  padding: var(--space-md) var(--space-2xl);
+  background: var(--accent);
+  color: var(--color-near-black, #1a1a1a);
+  font-size: var(--text-base);
+  font-weight: 700;
+  font-family: inherit;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.retakeButton:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.homeLink {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-md) var(--space-2xl);
+  border: 1px solid var(--text-muted);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+  text-decoration: none;
+  transition: border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.homeLink:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
