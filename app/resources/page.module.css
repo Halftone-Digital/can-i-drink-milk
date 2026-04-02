@@ -55,9 +55,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-xl) var(--space-xl);
+  width: 100%;
+  padding: var(--space-xl);
   cursor: pointer;
   user-select: none;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
 }
 
 .cardInfo {
