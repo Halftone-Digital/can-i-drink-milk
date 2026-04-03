@@ -8,12 +8,12 @@ const stats = [
 
 export default function StatsStrip() {
   return (
-    <section className={styles.strip}>
+    <section className={styles.section}>
       <div className={styles.container}>
-        {stats.map((stat) => (
-          <div key={stat.number} className={styles.stat}>
-            <div className={styles.number}>{stat.number}</div>
-            <p className={styles.label}>{stat.label}</p>
+        {stats.map((stat, i) => (
+          <div key={i} className={styles.stat}>
+            <span className={styles.number}>{stat.number}</span>
+            <span className={styles.label}>{stat.label}</span>
           </div>
         ))}
       </div>

@@ -1,5 +1,6 @@
 .section {
   padding: var(--space-4xl) var(--content-padding);
+  background: var(--accent-subtle);
 }
 
 .container {

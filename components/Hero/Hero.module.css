@@ -1,10 +1,11 @@
 .hero {
-  position: relative;
-  min-height: 80vh;
+  min-height: 60vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--space-3xl) var(--content-padding);
+  padding: var(--space-2xl) var(--content-padding);
+  position: relative;
   overflow: hidden;
 }
 
@@ -14,41 +15,85 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: var(--space-lg);
-  max-width: 600px;
+  flex: 1;
+  justify-content: center;
 }
 
+/* ── Brandmark + glow ── */
+
 .brandmark {
-  width: 80px;
-  height: auto;
-  filter: drop-shadow(0 0 40px rgba(146, 197, 188, 0.4));
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.glow {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(146, 197, 188, 0.15) 0%,
+    rgba(146, 197, 188, 0.05) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  animation: pulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cow {
+  position: relative;
+  width: 200px;
+  height: auto;
+}
+
+/* ── Typography ── */
 
 .headline {
   font-family: var(--font-serif);
   font-size: clamp(2.25rem, 5vw, 4rem);
   font-weight: 700;
+  letter-spacing: -0.03em;
   line-height: 1.1;
   color: var(--text-primary);
+  margin-top: var(--space-xl);
+  text-align: center;
 }
 
 .subheadline {
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   color: var(--text-secondary);
+  max-width: 480px;
   line-height: 1.5;
+  text-align: center;
+  margin-top: var(--space-md);
 }
+
+/* ── CTA ── */
 
 .cta {
   display: inline-block;
-  padding: var(--space-md) var(--space-2xl);
   background: var(--accent);
-  color: var(--color-near-black, #1a1a1a);
-  font-size: var(--text-lg);
+  color: #1a1a1a;
   font-weight: 700;
-  border-radius: var(--radius-full);
-  text-decoration: none;
-  transition: background var(--transition-fast), transform var(--transition-fast),
+  font-size: var(--text-lg);
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  margin-top: var(--space-xl);
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast),
     box-shadow var(--transition-fast);
 }
 
@@ -58,28 +103,46 @@
   box-shadow: 0 4px 20px rgba(146, 197, 188, 0.3);
 }
 
+/* ── Scroll indicator ── */
+
 .scrollIndicator {
-  position: absolute;
-  bottom: var(--space-xl);
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-md);
   color: var(--text-muted);
+  opacity: 0.5;
   animation: bounce 2s ease-in-out infinite;
 }
 
 @keyframes bounce {
   0%,
   100% {
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
   50% {
-    transform: translateX(-50%) translateY(8px);
+    transform: translateY(4px);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scrollIndicator {
+  .scrollIndicator,
+  .glow {
     animation: none;
+  }
+}
+
+/* ── Desktop ── */
+
+@media (min-width: 768px) {
+  .glow {
+    width: 500px;
+    height: 500px;
+  }
+
+  .cow {
+    width: 280px;
+  }
+
+  .subheadline {
+    font-size: var(--text-2xl);
   }
 }

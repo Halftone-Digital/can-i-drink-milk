@@ -20,7 +20,7 @@ export default function Footer() {
           data from USDA FoodData Central and Open Food Facts.
         </p>
         <p className={styles.credit}>
-          Built with AI at a university workshop on prototyping.
+          Built with AI at a UQ workshop on prototyping.
         </p>
       </div>
 

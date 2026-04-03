@@ -82,14 +82,14 @@
   font-size: var(--text-sm);
 }
 
-.chevron {
-  color: var(--text-muted);
-  transition: transform var(--transition-base);
+.chevronWrap {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
 
-.chevronOpen {
-  transform: rotate(180deg);
+.chevron {
+  color: var(--text-muted);
 }
 
 .cardContent {

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import Footer from "@/components/Footer/Footer";
 import ResourceCard from "./ResourceCard";
+import AnimatedHeader from "./AnimatedHeader";
 import styles from "./page.module.css";
 
 import type { Metadata } from "next";
@@ -62,22 +63,29 @@ export default async function ResourcesPage() {
     <>
       <main className={styles.page}>
         <div className={styles.container}>
-          <Link href="/" className={styles.backLink}>
-            <ArrowLeft size={16} />
-            Back to home
-          </Link>
-          <h1 className={styles.heading}>Workshop Resources</h1>
-          <p className={styles.subheading}>
-            Everything you need to build this project from scratch. Tap a doc to
-            expand it.
-          </p>
+          <AnimatedHeader>
+            <Link href="/" className={styles.backLink}>
+              <ArrowLeft size={16} />
+              Back to home
+            </Link>
+          </AnimatedHeader>
+          <AnimatedHeader delay={0.1}>
+            <h1 className={styles.heading}>Workshop Resources</h1>
+          </AnimatedHeader>
+          <AnimatedHeader delay={0.15}>
+            <p className={styles.subheading}>
+              Everything you need to build this project from scratch. Tap a doc
+              to expand it.
+            </p>
+          </AnimatedHeader>
           <div className={styles.grid}>
-            {items.map((item) => (
+            {items.map((item, i) => (
               <ResourceCard
                 key={item.file}
                 title={item.title}
                 description={item.description}
                 htmlContent={item.html}
+                index={i}
               />
             ))}
           </div>

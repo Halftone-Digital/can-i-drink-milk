@@ -8,18 +8,26 @@ export default function Hero() {
   return (
     <section className={styles.hero}>
       <HeroImageColumns />
+
       <div className={styles.content}>
-        <BrandMark className={styles.brandmark} aria-hidden="true" />
+        <div className={styles.brandmark}>
+          <div className={styles.glow} />
+          <BrandMark className={styles.cow} aria-hidden="true" />
+        </div>
+
         <h1 className={styles.headline}>Can I Drink Milk?</h1>
+
         <p className={styles.subheadline}>
           Most of the world can&rsquo;t. Let&rsquo;s find out about you.
         </p>
+
         <Link href="/quiz" className={styles.cta}>
           Take the Quiz
         </Link>
-      </div>
-      <div className={styles.scrollIndicator} aria-hidden="true">
-        <ChevronDown size={32} />
+
+        <div className={styles.scrollIndicator}>
+          <ChevronDown size={24} strokeWidth={1.5} />
+        </div>
       </div>
     </section>
   );
